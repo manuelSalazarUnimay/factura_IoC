@@ -3,6 +3,7 @@ package com.curso.spring.boot.springboot_di_factura.models;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 @Component
 public class invoice {
@@ -10,7 +11,9 @@ public class invoice {
     @Autowired
     private Client client;
 
+    @Value("${invoice.description}")
     private String description;
+
     private List<Item> items;
     public Client getClient() {
         return client;
